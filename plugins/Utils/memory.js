@@ -9,7 +9,7 @@ import { sendInteractive } from '../../lib/sendInteractive.js';
       return '█'.repeat(fill) + '░'.repeat(len - fill) + ' ' + Math.round((used / total) * 100) + '%';
   }
 
-  export default {
+export default {
       name: 'memory',
       aliases: ['mem', 'botmemory', 'memorystats', 'ram', 'memstats', 'botstats'],
       description: 'Show bot memory usage',

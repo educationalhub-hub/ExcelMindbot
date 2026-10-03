@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-  import { sendInteractive } from '../../lib/sendInteractive.js';
+import { sendInteractive } from '../../lib/sendInteractive.js';
 
   const HEADERS = {
       'User-Agent': 'Toxic-MD-Bot/2.0',
@@ -8,7 +8,7 @@ import fetch from 'node-fetch';
 
   const fmt = (lines) => lines.join('\n') + '\n> ©𝒏𝒐𝒘𝒆𝒓𝒆𝒅 𝒁𝒚 𝒙𝒉_𝒄𝒍𝒎𝒗𝒘𝒐𝒗';
 
-  export default async (context) => {
+export default async (context) => {
       const { client, m, text, prefix } = context;
 
       if (!text?.trim()) {

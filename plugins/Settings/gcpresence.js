@@ -1,13 +1,13 @@
 import { getGroupSettings, updateGroupSetting } from '../../database/config.js';
-  import ownerMiddleware from '../../utils/botUtil/Ownermiddleware.js';
-  import { sendInteractive } from '../../lib/sendInteractive.js';
+import ownerMiddleware from '../../utils/botUtil/Ownermiddleware.js';
+import { sendInteractive } from '../../lib/sendInteractive.js';
 
   const fmt = (message) => `╭─❏ 「 GCPRESENCE 」\n│ ${message}\n╰───────────────\n> ©𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧`;
 
   const ON_VALUES  = new Set(['on', 'enable', 'enabled', 'true', '1', 'start']);
   const OFF_VALUES = new Set(['off', 'disable', 'disabled', 'false', '0', 'stop']);
 
-  export default async (context) => {
+export default async (context) => {
       await ownerMiddleware(context, async () => {
           const { client, m, args, prefix } = context;
 

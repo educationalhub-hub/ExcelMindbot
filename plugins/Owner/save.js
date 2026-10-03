@@ -22,7 +22,7 @@ import { downloadContentFromMessage } from '@whiskeysockets/baileys';
       }
   }
 
-  export default {
+export default {
       name: 'save',
       aliases: ['sv'],
       run: async (context) => {

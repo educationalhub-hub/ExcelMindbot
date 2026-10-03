@@ -1,7 +1,7 @@
 import ownerMiddleware from '../../utils/botUtil/Ownermiddleware.js';
-  import { sendInteractive } from '../../lib/sendInteractive.js';
-  import { downloadContentFromMessage } from '@whiskeysockets/baileys';
-  import { createCanvas, loadImage } from '@napi-rs/canvas';
+import { sendInteractive } from '../../lib/sendInteractive.js';
+import { downloadContentFromMessage } from '@whiskeysockets/baileys';
+import { createCanvas, loadImage } from '@napi-rs/canvas';
 
   const fmt = (title, msg) => `╭─❏ 「 ${title}」\n│ ${msg}\n╰───────────────\n> ©𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧`;
 
@@ -38,7 +38,7 @@ import ownerMiddleware from '../../utils/botUtil/Ownermiddleware.js';
       return null;
   }
 
-  export default {
+export default {
       name: 'fullpp',
       aliases: ['pp', 'setpp', 'setprofile', 'setbotpp', 'profilepic', 'botpfp'],
       description: "Update the bot's profile picture (letterboxed to square, no cropping)",

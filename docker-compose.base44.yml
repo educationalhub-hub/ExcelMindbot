@@ -1,0 +1,45 @@
+# Base44 development compose for Toxic-MD.
+# Runs the bot from the cloned source with live-restart via the project's own
+# keep-alive.js supervisor. The Express web server (public/index.html + /health)
+# is the preview entry point on host port 3000.
+#
+# The app's database layer uses PostgreSQL when a usable DATABASE_URL is set,
+# otherwise it falls back to a JSON file (whatsasena.json) written in the repo
+# (persisted via the bind mount). The Pool config hardcodes SSL, so a local
+# non-SSL Postgres is never usable without code changes; we therefore leave
+# DATABASE_URL unset and let the app use its intended JSON backend.
+#
+# SESSION (WhatsApp session ID) is optional for boot — the web page loads
+# without it; provide it via the Base44 secrets dashboard to connect the bot.
+
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile.base44
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      # Non-secret runtime config (app settings only; no external credentials).
+      - PORT=3000
+      - DEVICE=default
+      - BOTNAME=Toxic-MD
+    env_file:
+      # Platform-managed secrets (e.g. SESSION) — LAST so they always win.
+      - /run/base44/app.env
+    # 1) install deps from the bind-mounted source (no lockfile -> npm install)
+    # 2) pre-apply Baileys patches (patch-baileys.js + the usync timeout patch
+    #    that index.js would otherwise apply and self-restart on)
+    # 3) hand off to keep-alive.js, the project's own supervisor that respawns
+    #    index.js on crash or on its fs.watchFile self-restart.
+    command: ["sh", "-ec", "npm install --no-audit --no-fund && node patch-baileys.js && node -e \"const fs=require('fs');const p='node_modules/@whiskeysockets/baileys/lib/Socket/usync.js';if(fs.existsSync(p)){let s=fs.readFileSync(p,'utf8');const o='const result = await query(iq);';const n='const result = await query(iq, 120000); /* __USYNC_TIMEOUT_PATCH__ */';if(s.includes(o)&&!s.includes('__USYNC_TIMEOUT_PATCH__')){fs.writeFileSync(p,s.replace(o,n));}}\" && exec node keep-alive.js"]
+    restart: on-failure
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:3000/health || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 180s

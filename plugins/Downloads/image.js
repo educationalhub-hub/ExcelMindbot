@@ -4,7 +4,7 @@ import { sendInteractive } from '../../lib/sendInteractive.js';
   const GCSE_KEY = 'AIzaSyDMbI3nvmQUrfjoCJYLS69Lej1hSXQjnWI';
   const GCSE_CX  = 'baf9bdb0c631236e5';
 
-  export default {
+export default {
       name: 'image',
       aliases: ['img', 'pic', 'searchimage'],
       description: 'Search and send images',

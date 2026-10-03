@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import { sendInteractive } from '../../lib/sendInteractive.js';
   const NEXRAY = 'https://api.nexray.web.id/downloader/soundcloud?url=';
 
-  export default {
+export default {
       name: 'soundcloud',
       alias: ['scloud', 'scdl'],
       run: async (context) => {

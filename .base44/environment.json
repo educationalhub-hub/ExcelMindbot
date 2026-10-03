@@ -1,0 +1,12 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/health",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "SESSION",
+      "description": "WhatsApp session ID (base64 JSON) from the Toxic-MD pairing site (https://toxicx.tech/pairing). Needed for the bot to actually connect to WhatsApp. Optional for boot — the web status page loads without it, but the bot will not link until this is set.",
+      "requiredAtBoot": false
+    }
+  ]
+}

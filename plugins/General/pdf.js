@@ -1,8 +1,8 @@
 import { makePDF } from '../../lib/toxicApi.js';
-    import { getSettings } from '../../database/config.js';
+import { getSettings } from '../../database/config.js';
 import { sendInteractive } from '../../lib/sendInteractive.js';
 
-  export default {
+export default {
       name: 'pdf',
       aliases: ['topdf', 'createpdf', 'makepdf'],
       description: 'Create a PDF from text',

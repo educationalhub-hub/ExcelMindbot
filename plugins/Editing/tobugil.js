@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-    import FormData from 'form-data';
+import FormData from 'form-data';
 import { sendInteractive } from '../../lib/sendInteractive.js';
 async function uploadToCatbox(buffer) {
     const form = new FormData();

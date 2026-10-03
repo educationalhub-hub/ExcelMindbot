@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import { sendInteractive } from '../../lib/sendInteractive.js';
   const NEXRAY = 'https://api.nexray.web.id/downloader/threads?url=';
 
-  export default {
+export default {
       name: 'threads',
       alias: ['threadsdl', 'tdl'],
       run: async (context) => {

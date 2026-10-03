@@ -1,9 +1,9 @@
 import { getSettings } from '../../database/config.js';
-  import { uploadToUrl } from '../../lib/toUrl.js';
-  import { makePhotoEdit } from '../../lib/toxicApi.js';
+import { uploadToUrl } from '../../lib/toUrl.js';
+import { makePhotoEdit } from '../../lib/toxicApi.js';
 import { sendInteractive } from '../../lib/sendInteractive.js';
   
-  export default {
+export default {
       name: 'imgedit',
       aliases: ['photoedit', 'aiedit'],
       description: 'AI photo editor',

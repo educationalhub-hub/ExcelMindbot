@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { sendInteractive } from '../../lib/sendInteractive.js';
-  import { uploadTempUrl } from '../../lib/toUrl.js';
-  export default {
+import { uploadTempUrl } from '../../lib/toUrl.js';
+export default {
     name: 'tomp4',
     aliases: ['tovideo', 'stickertomp4', 'sticker2video'],
     description: 'Converts stickers to MP4 videos',

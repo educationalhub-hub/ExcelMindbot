@@ -1,5 +1,5 @@
 import { sendInteractive } from '../../lib/sendInteractive.js';
-    import { node } from 'compile-run';
+import { node } from 'compile-run';
 export default async (context) => {
     const { m, text } = context;
     await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });

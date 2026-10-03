@@ -1,5 +1,5 @@
 import { sendInteractive } from '../../lib/sendInteractive.js';
-  import yts from 'yt-search';
+import yts from 'yt-search';
 export default async (context) => {
   const { client, m, text } = context;
   await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });

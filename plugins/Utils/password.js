@@ -1,6 +1,6 @@
 import { generateWAMessageFromContent, proto } from '@whiskeysockets/baileys';
   
-  export default {
+export default {
       name: 'password',
       aliases: ['genpass', 'passgen', 'strongpass'],
       description: 'Generate a strong random password',

@@ -7,7 +7,7 @@ import { sendInteractive } from '../../lib/sendInteractive.js';
       return m ? m[1] : null;
   }
 
-  export default async (context) => {
+export default async (context) => {
       const { client, m, text } = context;
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
       if (!text) {

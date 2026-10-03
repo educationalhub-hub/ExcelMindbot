@@ -1,6 +1,6 @@
 import { uploadToUrl } from '../../lib/toUrl.js';
-  import { makeCanvas } from '../../lib/toxicApi.js';
-    import { getSettings } from '../../database/config.js';
+import { makeCanvas } from '../../lib/toxicApi.js';
+import { getSettings } from '../../database/config.js';
 import { sendInteractive } from '../../lib/sendInteractive.js';
 
   const CANVAS_TYPES = [
@@ -9,7 +9,7 @@ import { sendInteractive } from '../../lib/sendInteractive.js';
       'wallpaper', 'wattpad', 'weather', 'sticker', 'lyrics', 'shazam', 'web', 'image',
   ];
 
-  export default {
+export default {
       name: 'canvas',
       aliases: ['canvascard', 'spotifycard', 'youtubecard', 'tiktokcard'],
       description: 'Generate themed canvas cards from an image',

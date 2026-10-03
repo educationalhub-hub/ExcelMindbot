@@ -7,7 +7,7 @@ const __dirname = dirname(__filename);
 import path from 'path';
 import pino from 'pino';
 
-                import { generateWAMessageFromContent, proto } from '@whiskeysockets/baileys';
+import { generateWAMessageFromContent, proto } from '@whiskeysockets/baileys';
 import { sendInteractive } from '../../lib/sendInteractive.js';
 function cleanNumber(input) {
     let num = input.replace(/[\s\-\(\)\+\.]/g, '');

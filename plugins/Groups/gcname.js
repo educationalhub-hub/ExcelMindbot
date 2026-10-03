@@ -1,9 +1,9 @@
 import ownerMiddleware from '../../utils/botUtil/Ownermiddleware.js';
-  import { sendInteractive } from '../../lib/sendInteractive.js';
+import { sendInteractive } from '../../lib/sendInteractive.js';
 
   const fmt = (msg) => `╭─❏ 「 GCNAME 」\n│ ${msg}\n╰───────────────\n> ©𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧`;
 
-  export default {
+export default {
     name: 'gcname',
     aliases: ['changename','changegcname','groupname','editgcname','renamegc','setgcname','gcnm','renamegroup','setgroupname','gname','rengc'],
     description: 'Change the group name/subject',

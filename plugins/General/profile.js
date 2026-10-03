@@ -1,6 +1,6 @@
 import { sendInteractive } from '../../lib/sendInteractive.js';
 
-  export default {
+export default {
       name: 'profile',
       aliases: ['getpp', 'pp', 'pfp'],
       description: 'Get profile picture. In a group with no args, sends the group pic and description.',

@@ -29,7 +29,7 @@ import { sendInteractive } from '../../lib/sendInteractive.js';
 
   const fmtErr = (msg) => `╭─❏ 「 CAT」\n│ ${msg}\n╰───────────────\n> ©𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐁𝐲 𝐱𝐡_𝐜𝐥𝐢𝐧𝐭𝐨𝐧`;
 
-  export default {
+export default {
       name: 'cat',
       aliases: ['rawfile','filecat','readfile','showfile','catfile','raw'],
       description: 'Show raw contents of a replied-to document or text file',

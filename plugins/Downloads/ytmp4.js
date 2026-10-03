@@ -12,7 +12,7 @@ import { sendInteractive } from '../../lib/sendInteractive.js';
       return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`;
   }
 
-  export default async (context) => {
+export default async (context) => {
       const { client, m, text, prefix, args } = context;
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
       if (!text) {

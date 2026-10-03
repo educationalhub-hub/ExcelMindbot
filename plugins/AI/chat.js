@@ -1,9 +1,9 @@
 import fetch from 'node-fetch';
 import { sendInteractive } from '../../lib/sendInteractive.js';
 
-  import { getConversationHistory, addConversationMessage, clearConversationHistory } from '../../database/config.js';
+import { getConversationHistory, addConversationMessage, clearConversationHistory } from '../../database/config.js';
 
-  export default async (context) => {
+export default async (context) => {
       const { client, m, text, prefix } = context;
         await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });
       const num = m.sender;

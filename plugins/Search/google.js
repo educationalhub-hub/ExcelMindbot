@@ -1,5 +1,5 @@
 import { sendInteractive } from '../../lib/sendInteractive.js';
-  import axios from 'axios';
+import axios from 'axios';
 export default async (context) => {
   const { client, m, text } = context;
   await client.sendMessage(m.chat, { react: { text: '⌛', key: m.reactKey } });

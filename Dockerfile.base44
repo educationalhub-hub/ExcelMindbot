@@ -1,0 +1,13 @@
+# Base44 dev image — system libraries only.
+# Node dependencies are installed at container startup (see docker-compose.base44.yml)
+# so that bind-mounted source edits are picked up without rebuilding.
+FROM node:22-bookworm
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg \
+    libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev \
+    libwebp-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app

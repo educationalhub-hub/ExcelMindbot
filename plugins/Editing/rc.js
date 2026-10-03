@@ -1,9 +1,9 @@
 import { uploadToUrl } from '../../lib/toUrl.js';
-  import { makeRC } from '../../lib/toxicApi.js';
-    import { getSettings } from '../../database/config.js';
+import { makeRC } from '../../lib/toxicApi.js';
+import { getSettings } from '../../database/config.js';
 import { sendInteractive } from '../../lib/sendInteractive.js';
 
-  export default {
+export default {
       name: 'rc',
       aliases: ['airc', 'rcedit'],
       description: 'AI image edit using RC model',
